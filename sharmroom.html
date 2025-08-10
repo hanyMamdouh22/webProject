@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGYPTION HOTEL ROOMS</title>
+    <link rel="icon" href="EGYPTION HOTEL.webp"/>
+    <link rel="shortcut" href="EGYPTION HOTEL.webp"/>
+    <link rel="apple-touch-icon" href="EGYPTION HOTEL.webp"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #988265;
+        }
+
+        header {
+            width: 100%;
+            height: 900px;
+            padding: 5px;
+            background-image: url(wepphoto/sh2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: hsla(0, 0%, 100%, 0.712);
+            box-sizing: border-box;
+        }
+        
+        header div h1 {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: #8e6b41;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        .nav-icon {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFDE00;
+        }
+
+        .nav-icon img {
+            border-radius: 50%;
+            margin-right: 30px;
+            border: 3px solid #8e6b41;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 30px;
+            margin-right: 20px;
+        }
+
+        .nav-a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-a:hover {
+            transform: scale(1.1);
+        }
+
+        .sticky-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(152, 130, 101, 0.5);
+            color: white;
+            padding: 10px 20px;
+            z-index: 10;
+        }
+
+        .sticky-nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .sticky-nav a:hover {
+            color: #FFD700;
+        }
+
+        .header-ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-ul li {
+            font-size: 18px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #FFD700;
+            margin: 30px 0;
+        }
+
+        
+        .rooms-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .single-room, .double-room, .suits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1400px;
+            padding: 10px;
+        }
+
+        .single-room div, .double-room div, .suits div {
+            border: 2px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            width: 295px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #8e6b41;
+            margin-bottom: 20px;
+            
+            position: relative;
+            min-height: 400px;
+            padding-bottom: 80px;
+        }
+        
+        .single-room div:hover, .double-room div:hover, .suits div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .single-room img, .double-room img, .suits img {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .button {
+           
+            font-size: 25px;
+            padding: 15px 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: blue;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+        }
+
+        .button:hover {
+            background-color: hsl(240, 100%, 27%);
+            transform: translateY(-5px);
+        }
+
+        .div p {
+            font-size: 18px;
+            color: white;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #2C2C2C;
+            color: #F0E68C;
+            text-align: center;
+            padding: 30px 20px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #D3D3D3;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        footer p {
+            font-size: 30px;
+            margin-top: 15px;
+            color: #D3D3D3;
+            font-weight: bold;
+        }
+
+        .social a i {
+            font-size: 2rem;
+        }
+
+        footer .social {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        window.addEventListener('popstate', function () {
+            if (document.referrer) {
+                window.location.href = document.referrer;
+            } else {
+                window.location.href = 'start.php';
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="sticky-nav">
+            <div class="nav-icon">
+                <img src="EGYPTION HOTEL.webp" alt="sorry some thing wrong" width="60px" height="60px">
+                <span>EGYPTION HOTEL</span>
+            </div>
+            <div class="nav-left">
+                <a href="start.php" class="nav-a">Home</a>
+                <a href="abouthotel.html" class="nav-a">About</a>
+                <a href="contactUs.html" class="nav-a">Contact Us</a>
+                <a href="CancelBooking.php" class="nav-a">Cancel Booking</a>
+            </div>
+        </nav>
+        <div>
+            <h1>Welcome to Egyptian Hotel</h1>
+        </div>
+    </header>
+    <main>
+        <h1>SINGLE ROOMS</h1>
+        <div class="rooms-container">
+            <div class="single-room">
+                <div class="div">
+                    <img src="wepphoto/sharmroom1.jpeg" alt="error">
+                    <p>Single bed</p>
+                    <p>TV</p>
+                    <p>15m²</p>
+                    <p>Breakfast</p>
+                    <p>Cost: $150</p>
+                    <form action="form.php" method="POST" id="bookingForm1">
+                        <input type="hidden" name="room_type" value="single">
+                        <input type="hidden" name="cost" value="150">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmroom2.jpeg" alt="error">
+                    <p>Single bed</p>
+                    <p>20m²</p>
+                    <p>TV</p>
+                    <p>Breakfast and lunch</p>
+                    <p>Cost: $200</p>
+                    <form action="form.php" method="POST" id="bookingForm2">
+                        <input type="hidden" name="room_type" value="single">
+                        <input type="hidden" name="cost" value="200">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmroom3.jpeg" alt="error">
+                    <p>Single bed</p>
+                    <p>25m²</p>
+                    <p>TV</p>
+                    <p>Breakfast, lunch and dinner</p>
+                    <p>Cost: $300</p>
+                    <form action="form.php" method="POST" id="bookingForm3">
+                        <input type="hidden" name="room_type" value="single">
+                        <input type="hidden" name="cost" value="300">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmroom4.jpeg" alt="error">
+                    <p>Single bed</p>
+                    <p>30m²</p>
+                    <p>TV</p>
+                    <p>Breakfast, lunch and dinner</p>
+                    <p>Full option</p>
+                    <p>Cost: $400</p>
+                    <form action="form.php" method="POST" id="bookingForm4">
+                        <input type="hidden" name="room_type" value="single">
+                        <input type="hidden" name="cost" value="400">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h1>DOUBLE ROOMS</h1>
+        <div class="rooms-container">
+            <div class="double-room">
+                <div class="div">
+                    <img src="wepphoto/sharmdouble1.jpeg" alt="error">
+                    <p>Two beds</p>
+                    <p>30m²</p>
+                    <p>TV</p>
+                    <p>Breakfast</p>
+                    <p>Cost: $400</p>
+                    <form action="form.php" method="POST" id="bookingForm5">
+                        <input type="hidden" name="room_type" value="double">
+                        <input type="hidden" name="cost" value="400">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmdouble2.jpeg" alt="error">
+                    <p>Two beds</p>
+                    <p>35m²</p>
+                    <p>TV</p>
+                    <p>Breakfast and lunch</p>
+                    <p>Cost: $500</p>
+                    <form action="form.php" method="POST" id="bookingForm6">
+                        <input type="hidden" name="room_type" value="double">
+                        <input type="hidden" name="cost" value="500">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmdouble3.jpeg" alt="error">
+                    <p>Two beds</p>
+                    <p>40m²</p>
+                    <p>TV</p>
+                    <p>Breakfast, lunch and dinner</p>
+                    <p>Cost: $600</p>
+                    <form action="form.php" method="POST" id="bookingForm7">
+                        <input type="hidden" name="room_type" value="double">
+                        <input type="hidden" name="cost" value="600">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmdouble4.jpeg" alt="error">
+                    <p>Two beds</p>
+                    <p>50m²</p>
+                    <p>TV</p>
+                    <p>Breakfast, lunch and dinner</p>
+                    <p>Full option</p>
+                    <p>Cost: $800</p>
+                    <form action="form.php" method="POST" id="bookingForm8">
+                        <input type="hidden" name="room_type" value="double">
+                        <input type="hidden" name="cost" value="800">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h1>SUITS</h1>
+        <div class="rooms-container">
+            <div class="suits">
+                <div class="div">
+                    <img src="wepphoto/sharmsuit1.jpeg" alt="error">
+                    <p>Single bed</p>
+                    <p>90m²</p>
+                    <p>TV</p>
+                    <p>Breakfast</p>
+                    <p>Cost: $1000</p>
+                    <form action="form.php" method="POST" id="bookingForm9">
+                        <input type="hidden" name="room_type" value="suits">
+                        <input type="hidden" name="cost" value="1000">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmsuit2.jpeg" alt="error">
+                    <p>Single bed</p>
+                    <p>100m²</p>
+                    <p>TV</p>
+                    <p>Breakfast and lunch</p>
+                    <p>Jacuzzi</p>
+                    <p>Cost: $1200</p>
+                    <form action="form.php" method="POST" id="bookingForm10">
+                        <input type="hidden" name="room_type" value="suits">
+                        <input type="hidden" name="cost" value="1200">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmsuit3.jpeg" alt="error">
+                    <p>Two beds</p>
+                    <p>120m²</p>
+                    <p>TV</p>
+                    <p>Breakfast, lunch and Dinner</p>
+                    <p>Jacuzzi</p>
+                    <p>Journeys</p>
+                    <p>Cost: $1400</p>
+                    <form action="form.php" method="POST" id="bookingForm11">
+                        <input type="hidden" name="room_type" value="suits">
+                        <input type="hidden" name="cost" value="1400">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+                <div class="div">
+                    <img src="wepphoto/sharmsuit4.jpeg" alt="error">
+                    <p>Three beds</p>
+                    <p>120m²</p>
+                    <p>TV</p>
+                    <p>Breakfast, lunch and Dinner</p>
+                    <p>Jacuzzi</p>
+                    <p>Journeys</p>
+                    <p>Full option</p>
+                    <p>Cost: $1600</p>
+                    <form action="form.php" method="POST" id="bookingForm12">
+                        <input type="hidden" name="room_type" value="suits">
+                        <input type="hidden" name="cost" value="1600">
+                        <input type="hidden" name="branch" value="sharm">
+                        <button type="submit" class="button">Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="social">
+            <p>Follow us on:</p>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>Connect with us for the best rates</p>
+    </footer>
+</body>
+</html>
